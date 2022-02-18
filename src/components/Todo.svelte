@@ -1,5 +1,6 @@
 <script>
 	import { deleteTodo, toggleTodoCompleted } from '../stores/todoStore';
+
 	export let todo;
 </script>
 
@@ -8,7 +9,7 @@
 		name="completed"
 		type="checkbox"
 		checked={todo.completed}
-		on:change={() => toggleTodoCompleted(todo.id)}
+		on:change={() => toggleTodoCompleted(todo.id, todo.completed)}
 		class="mr-2 form-checkbox h-5 w-5"
 	/>
 	<span class={`flex-1 text-gray-800 ${todo.completed ? 'line-through' : ''}`}>{todo.text}</span>

@@ -1,14 +1,17 @@
 <script>
 	import { addTodo } from '../stores/todoStore';
+	import { user } from '../stores/authStore';
+
 	let todo = '';
+
 	const handleSubmit = () => {
-		addTodo(todo);
+		addTodo(todo, $user.id);
 		todo = '';
 	};
 </script>
 
 <form class="my-6" on:submit|preventDefault={handleSubmit}>
-	<div class="flex flex-col tex-tsm mb-2">
+	<div class="flex flex-col tex-sm mb-2">
 		<label for="todo" class="font-bold mb-2 text-gray-800">Todo</label>
 		<input
 			type="text"
